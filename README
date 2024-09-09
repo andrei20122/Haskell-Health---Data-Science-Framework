@@ -1,102 +1,39 @@
-Leahu Morie Robert Andrei 321 CB
+# Haskell Health - Data Science Framework
 
-TASKSET 1
+The goal of the project is to create a data science analysis framework similar to **pandas** in Haskell, designed for analyzing fitness data such as step counts, physical activities, and sleep tracking.
 
-TASK 1
--am facut o functie pentru a transforma lista de stringuri in int
--dupa am facut functia pentru media aritmetica care imi aduna elementele mele
-din lista de int uri si dupa imi imparte la nr lor 
--am printat media aritmetica cu 2 zecimale exacte asa cum aparea in refs
-cu ajutorul lui printf
+## Core Features
 
-TASK2
--la prima functie pt a afla nr de oameni m am folosit de fc length si 
-cu ajutorul lui filter am separat persoanele care aveau cel putin 1000 
-de pasi cu cele care nu aveau 
--la a 2 a  functie ,functia medie imi face media aritmetica a persoanelor care si au indeplinit
-obiectivul 
--cu functia percent am facut procentajul
--iar dupa am facut procentul de oameni care si au atins "goal ul "
--ultima data am facut  numărul 
-mediu de pași zilnici pentru toți oamenii
+- **CSV Parsing and Table Management**: 
+  - Read, manipulate, and write CSV-like tables using Haskell's functional programming features.
+  
+- **Data Analysis**: 
+  - Calculate average steps per user and analyze patterns across different hours of the day.
+  - Identify active periods and categorize users based on activity intensity.
+  - Create leaderboards by sorting users based on their total steps.
 
-TASK3
--la acest task scapam de headerul tabelului si  il transpunem ca sa lucram mai usor pe linii decat
-pe coloane , folosesc functia de mai sus toInt care imi transforma o lista de stringuri in lista de int uri
--fac media pasilor medii pt fiecare ora si accesez fiecare element cu map
--dupa returnez rezultatul meu cu , coloanele respective H10,H11,H12 etc
+- **Table Operations**:
+  - Implement functions for sorting, joining, filtering, projections, and both vertical and horizontal unions of tables.
 
-TASK4
--functia vam(VeryActiveMinutes) scap de primul elem al tabelului ,il transpun
-dupa scap de primele 3 elem inutile ale tabelului , iau capul de lista cu head si dupa verific 
-daca se afla intre 0 si 50 , iar cu show ul transform in String, iar apoi aplic
-acelasi lucru si pt 50-100 si 100-500 
--iar la celelalte functii (fam si lam) fac acelasi lucru doar ca scap cu ajutorul lui drop 
-de primele 4 si respectiv primele 5 
-- si dupa intorc tabelul respectiv cu column,range1,range2...
+## Tasks Implemented
 
-TASK5
--practic iau al 2 a elem din primul rand si il compar cu al 2 a elem din al 2 a rand
-pe care le transform in int uri
--daca sunt egale compar numele intre ele cu functia mea strcmp
-    -> functia de strcmp ia primul caracter din ambele stringuri si le compara ,
-        daca sunt egale trece mai departe ,iar daca nu returnez rez corespunzator
-    ->la cazurile de baza stringul care este mai mic se termina primul
--daca nu sunt egale returnez rezultatul corespunzator
--iar la final creez tabelul respectiv
+- **Average Steps Calculation**: 
+  - Compute the average number of steps per day from the `eight_hours` table.
 
-TASK6
--la functia sortareDifference fac acelasi lucru ca la functia sortare de la taskul5
-doar ca verific practic al 4 lea elem din rand si il transform in float 
--dupa cu functiile: avgfirst4 si avglast4 ,fac media primelor 4 elem si cu 
-avglast4 fac media ultimelor 4 elem
--cu differenceR fac diferenta dintre medii in modul 
--apoi  returnez tabelul sortat cresc dupa diferenta exact cu 2 zecimale
+- **Goal Achievement Analysis**: 
+  - Check how many users met their daily step goals and calculate the percentage of users who achieved their goals.
 
-TASK7
--aplic fiecarui element din tabel functia f 
+- **Active Period Analysis**: 
+  - Identify the most active hours and categorize active minutes into ranges using the `physical_activity` table.
 
-TASK8
--la rmap aplic pe fiecare rand din tabel functia respectiva 
--cu toFloat transform un integer in float
--la final returnez randul cu email ul si nr total de minute 
-dormite in acea saptaman
+- **Leaderboards**: 
+  - Sort users by their total steps and display rankings in ascending order.
 
-TASK SET 2
+- **Table Utilities**: 
+  - Implement utility functions like `vmap`, `rmap`, `tsort`, and `tjoin` for advanced table manipulations.
 
-TASK1
--ca sa rezolv acest task m am folosit de 4 functii :
-            -> strcmp2 care e aceeasi fc folosita la prima tema si imi compara 2 stringuri
-            -> sorrt_nr care imi compara care imi compara stringurile care sunt nr gen "12" sau "12.0"
-            -> isNumber care verifica daca un string este nr
-            -> findPs care imi returneaza poz unui element din lista 
--fc sortareColoane vede daca elementul de pe poz nr din r1 este numar atunci :
-                    |-> verificam si daca elem de la poz nr din r1 si r2 sunt egale atunci:
-                    |       -> mai facem o verificare, adica daca elementul din prima coloana este numar abia atunci le compari ca nr ,
-                    |    iar daca nu le compari ca stringuri 
-                    |->daca nu sortezi normla ca numere , elem de pe poz nr    
-- daca  nu verific egalitatea dintre cele 2 stringuri de pe poz nr si daca sunt egale fac 
-ce am facut si mai sus (aproape)
--daca nu trec mai departe 
-- la final returnez tabelul sortat 
+## Technologies Used
 
-TASK2
-- mi am facut o functie care imi concateneaza 2 liste ,iar dupa verific daca headerele tabelelor
-sunt egale atunci concatenez cele 2 tabele , bineinteles tabelul rezultat o sa contina doar
-header ul respectiv 
--iar daca nu sunt egale returnez tabelul 1
-
-TASK 3
--la hunion vad care tabel este mai mare si dupa  concatenez cele 2 tabele transpuse si dupa fac transpusa lor si o sa vina exact 
-coloanele pe care le vreau
-- pentru a aduga randurile goale de care mai am nevoie mi am facut o fc separata umplereRanduri care 
-imi ia un tabel si cate randuri vreau sa pun in el si returneaza un alt tabel cu randurile goale 
-
-TASK 6
--pt rezolvarea acestui task mi am facut doar o fc care imi extrage o coloaan de pe o anumita poz 
-din tabel 
-- am returnat tabelul cu , coloanele respective extrase 
-
-TASK 7
--am returnat tabelul filtarat pe baza conditiei impuse cu header ul lui specific 
--am folosit si o fc auxiliara care imi ia elem de pe o poz
+- **Language**: Haskell
+- **Data Handling**: CSV parsing and data aggregation using Haskell functions.
+- **Output Formatting**: Floating-point precision handled using `printf("%.2f")`.
